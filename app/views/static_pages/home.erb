@@ -1,0 +1,299 @@
+<!-- PRELOADER
+============================================= -->
+
+<div id="preloader">
+  <div id="status"></div>
+</div>
+
+
+
+<!-- HEADER
+============================================= -->
+<header id="header">
+  <div class="navbar navbar-fixed-top">
+    <div class="container">
+
+
+      <!-- Navigation Bar -->
+      <div class="navbar-header">
+
+        <!-- Responsive Menu -->
+        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-menu">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!-- Logo Image -->
+        <a class="navbar-brand" href="#"><%= image_tag "logo.png", alt: "logo", role:"banner" %></a>
+
+      </div>	<!-- End Navigation Bar -->
+
+
+      <!-- Navigation Menu -->
+      <nav id="navigation-menu" class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="GoToHome" class="selected-nav" href="#intro">Accueil</a></li>
+          <li><a id="GoToFeatures" href="#features">Description</a></li>
+          <li><a id="GoToNewsletter" href="#newsletter">Partenaires</a></li>
+        </ul>
+      </nav>  <!-- End Navigation Menu -->
+
+
+    </div>	  <!-- End container -->
+  </div>		<!-- End navbar fixed top  -->
+</header>	<!-- END HEADER -->
+
+<!-- INTRO
+		============================================= -->
+<section id="intro">
+  <div class="container">
+    <div class="row">
+
+
+      <!-- Intro Description -->
+      <div id="intro_description" class="col-md-7">
+
+        <h1>Spot&Snap</h1>
+        <h2> découvrez une nouvelle façon de s'amuser</h2>
+
+        <p>Rencontrez des personnes en jouant avec Spot&Snap !<br>
+          Téléchargez l'application et accomplissez des défis dès à présent
+        </p>
+
+        <!-- Intro Stores Buttons -->
+        <div id="intro_stores">
+          <a href="#"><%= image_tag "icons/appstore.png", alt: "appstore_icon" %></a>
+          <a href="#"><%= image_tag "icons/google.png", alt: "google_icon" %></a>
+        </div>
+
+      </div>	<!-- End Intro Description -->
+
+
+      <!-- Intro Image -->
+      <div id="intro_image" class="col-md-5 text-center">
+        <%= image_tag "thumbs/intro_image.png", class: "img-responsive", alt: "intro_image" %>
+      </div>
+
+
+    </div>	  <!-- End row -->
+  </div>	   <!-- End container -->
+</section>	 <!-- END INTRO -->
+
+
+
+<!-- FEATURES
+============================================= -->
+<section id="features">
+  <div class="container">
+
+
+    <!-- Section Title -->
+    <div class="row">
+      <div class="col-sm-12 titlebar">
+        <h2>Une nouvelle façon de rencontrer</h2>
+        <p>Nouez le lien !</p>
+      </div>
+    </div>
+
+
+    <!-- Features Content Holder -->
+    <div class="row">
+
+      <!-- Left Side Content -->
+      <div id="features_left_content" class="col-md-4">
+
+        <div class="feature-box triggerAnimation animated" data-animate="fadeInLeft">
+          <h4>Affrontez ceux que vous croisez<i class="fa fa-map-marker"></i></h4>
+          <p>Avec Spot&Snap vous serez en défi avec d'autres personnes à proximité de votre défi</p>
+        </div>
+
+        <div class="feature-box triggerAnimation animated" data-animate="fadeInRight">
+          <h4>Soyez le premier du classement<i class="fa fa-trophy"></i></h4>
+          <p>Montez dans le classement en participant et en gagnant des défis ! </p>
+        </div>
+
+        <div class="feature-box triggerAnimation animated" data-animate="fadeInRight">
+          <h4>Disponible sur votre mobile<i class="fa fa-mobile"></i></h4>
+          <p>Vous pouvez téléchargez dès à présent Spot&Snap sur l'AppStore ou Google Play'</p>
+        </div>
+
+      </div>	 <!-- End Left Side Content -->
+
+
+      <!-- Features Image -->
+      <div id="features_image" class="col-md-4 text-center triggerAnimation animated clearfix" data-animate="bounceIn">
+        <%= image_tag "thumbs/home-challenge.png", class: "img-responsive", alt: "features_image" %>
+      </div>
+
+
+      <!-- Right Side Content -->
+      <div id="features_right_content" class="col-md-4">
+
+        <div class="feature-box triggerAnimation animated" data-animate="fadeInLeft">
+          <h4><i class="fa fa-camera"></i> Prenez une photo et soyez victorieux</h4>
+          <p>Pour gagner un défi, vous devez être le premier à trouver votre adversaire et à prendre une photo de lui </p>
+        </div>
+
+        <div class="feature-box triggerAnimation animated" data-animate="fadeInLeft">
+          <h4><i class="fa fa-weixin"></i> Rencontrez votre adversaire</h4>
+          <p>Une fois votre défi terminé, restez en contact grâce au chat Spot&Snap </p>
+        </div>
+
+        <div class="feature-box triggerAnimation animated" data-animate="fadeInRight">
+          <h4><i class="fa fa-cog"></i> Vie privée</h4>
+          <p>Si vous souhaitez un peu de tranquilité, vous pouvez désactiver les défis en un seul clic </p>
+        </div>
+
+      </div>	 <!-- End Right Side Content -->
+
+    </div>	 <!-- End Features Content Holder -->
+
+
+  </div>		<!-- End container -->
+</section>	 <!-- END FEATURES -->
+
+
+<!-- STATISTIC BANNER
+============================================= -->
+<div id="statistic_banner" class="parallax">
+  <div class="container">
+
+
+    <!-- Statistic Holder -->
+    <div id="statistic-holder" class="row">
+
+      <div class="col-md-12">
+        <div class="row">
+          <!-- Statistic Element #1 -->
+          <div class="col-xs-3 col-sm-3 col-md-3 statistic-block">
+
+            <div class="statistic-number"><%= @stats[:downloads]%></div>
+            <div class="statistic-text">Téléchargements</div>
+          </div>
+
+          <!-- Statistic Element #2 -->
+          <div class="col-xs-3 col-sm-3 col-md-3 statistic-block">
+
+            <div class="statistic-number"><%= @stats[:challenges]%></div>
+            <div class="statistic-text">défis réalisés</div>
+          </div>
+
+          <!-- Statistic Element #3 -->
+          <div class="col-xs-3 col-sm-3 col-md-3 statistic-block">
+
+            <div class="statistic-number"><%= @stats[:points]%></div>
+            <div class="statistic-text">points gagnés</div>
+          </div>
+
+          <!-- Statistic Element #4 -->
+          <div class="col-xs-3 col-sm-3 col-md-3 statistic-block">
+
+            <div class="statistic-number"><%= @stats[:players]%></div>
+            <div class="statistic-text">joueurs</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>	<!-- End Statistic Holder -->
+
+
+  </div>	<!-- End container -->
+</div>
+
+
+
+<!-- PARTNERS
+============================================= -->
+<section id="newsletter">
+  <div class="container">
+
+
+    <!-- Newsletter Title -->
+    <div class="row">
+      <div class="col-sm-12 text-center triggerAnimation animated" data-animate="flipInX">
+        <h1>Partenaires</h1>
+        <p>Vous souhaitez collaborer avec nous ?</p>
+      </div>
+    </div>
+
+
+    <!-- Newsletter Form -->
+    <div class="row">
+
+      <div class="col-md-12 text-center">
+
+        <!-- Newsletter Form Message -->
+        <div class="message"></div>
+
+          <%= form_tag presentation_path, method: :get, id: "newsletter_form", class:"triggerAnimation animated", html: {"data-animate" => "flipInX"} do %>
+              <div id="newsletterfields">
+                <%= submit_tag "Informations" %>
+              </div>
+          <% end %>
+
+      </div>
+
+    </div>	<!-- End row -->
+
+
+  </div>	  <!-- End container -->
+</section>	<!-- END PARTNERS -->
+
+
+<!-- FOOTER
+    ============================================= -->
+<footer id="footer">
+  <div class="container">
+
+
+    <!-- Footer Social Icons -->
+    <div class="row">
+      <div id="footer_icons" class="col-md-12 text-center">
+        <ul class="footer-socials clearfix">
+          <li><a class="foo_social ico-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="foo_social ico-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="foo_social ico-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+          <!--
+          <li><a class="foo_social ico-behance" href="#"><i class="fa fa-behance"></i></a></li>
+          <li><a class="foo_social ico-dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+
+
+              <li><a class="foo_social ico-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="foo_social ico-digg" href="#"><i class="fa fa-digg"></i></a></li>
+              <li><a class="foo_social ico-deviantart" href="#"><i class="fa fa-deviantart"></i></a></li>
+              <li><a class="foo_social ico-envelope" href="#"><i class="fa fa-envelope-square"></i></a></li>
+              <li><a class="foo_social ico-delicious" href="#"><i class="fa fa-delicious"></i></a></li>
+              <li><a class="foo_social ico-instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="foo_social ico-pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
+              <li><a class="foo_social ico-dropbox" href="#"><i class="fa fa-dropbox"></i></a></li>
+              <li><a class="foo_social ico-skype" href="#"><i class="fa fa-skype"></i></a></li>
+              <li><a class="foo_social ico-youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+              <li><a class="foo_social ico-tumblr" href="#"><i class="fa fa-tumblr"></i></a></li>
+              <li><a class="foo_social ico-vimeo" href="#"><i class="fa fa-vimeo-square"></i></a></li>
+              <li><a class="foo_social ico-flickr" href="#"><i class="fa fa-flickr"></i></a></li>
+              <li><a class="foo_social ico-github" href="#"><i class="fa fa-github-alt"></i></a></li>
+              <li><a class="foo_social ico-renren" href="#"><i class="fa fa-renren"></i></a></li>
+              <li><a class="foo_social ico-vk" href="#"><i class="fa fa-vk"></i></a></li>
+              <li><a class="foo_social ico-xing" href="#"><i class="fa fa-xing"></i></a></li>
+              <li><a class="foo_social ico-weibo" href="#"><i class="fa fa-weibo"></i></a></li>
+              <li><a class="foo_social ico-rss" href="#"><i class="fa fa-rss"></i></a></li>
+          -->
+
+        </ul>
+      </div>	 <!-- End Footer Social Icons -->
+    </div>
+
+
+    <!-- Footer Copy-->
+    <div class="row">
+      <div id="footer_copy" class="col-sm-12 text-center">
+        <p>Copyright <%= Date.today.year %> <span>Spot&Snap</span>. Tous droits réservés.</p>
+      </div>
+    </div>
+
+
+  </div>	  <!-- End container -->
+</footer>	<!-- END FOOTER -->

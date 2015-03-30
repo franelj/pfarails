@@ -1,0 +1,19 @@
+<% provide(:page_title, "Modifier une offre") %>
+
+<%= link_to partner_offers_path do %>
+    <%= button_tag "Retour à la liste", class: "btn btn-primary" %>
+<% end %>
+<br><br>
+<%if @offer.errors.any? %>
+    <div align="center">
+      <ul>
+        <% @offer.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <br>
+<% end %>
+<%= form_for(@offer, url: partner_offer_path, html: { class: "form-horizontal" }) do |f| %>
+    <%= render partial: 'partner_offer_form_fields', locals: {f: f} %>
+<% end %>

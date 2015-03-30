@@ -1,0 +1,2 @@
+module PartnerOffersHelper
+end

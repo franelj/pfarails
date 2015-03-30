@@ -1,0 +1,571 @@
+<h1>API METHODS : </h1>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1<br>
+<strong>Code d'erreurs : </strong>
+<ul>
+  <li>200 : Requete executée avec succès</li>
+  <li>500 : Erreur du serveur (== bug serveur)</li>
+  <li>400 : Requête invalide (Paramètre manquant, ou une erreur est survenue pendant l'execution de la requete (erreur logique, échec de validation de modèle etc)</li>
+  <li>401 : Erreur d'authentication (API key, email, password, token invalides)</li>
+  <li>404 : Page introuvable</li>
+</ul>
+Les erreurs sont généralement rendues en JSON, et si c'est le cas un message est disponible sous la clé "message". Dans de rares cas, l'erreur est rendue en HTML<br>
+Les erreurs 500 sont à corriger coté Rails<br>
+Les erreurs 400 selon les cas peuvent être produite par un utilisateur (email déjà pris = erreur 400) ou par le développeur (création d'une chatroom seul = erreur 400)<br>
+Les erreurs 401 viennent d'un problème d'authentification, c'est à dire : une mauvaise api key, une mauvaise combinaison token/password, une mauvaise combinaison email/password.<br>
+La 401 peut également survenir si un utilisateur n'a pas ajouté de photo. Dans ce cas les méthodes accessibles sont : register, login, users/current, users/upload-video<br>
+
+<hr>
+<h3>Register</h3>
+<strong>URL : </strong>http://spotnsnap.com/api/v1/register
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>username</li>
+  <li>email</li>
+  <li>password</li>
+  <li>api_key</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "message":"Registration is successful, you can now log in",
+  </div>
+  }
+</div>
+
+<hr>
+<h3>Login</h3>
+<strong>URL : </strong>http://spotnsnap.com/api/v1/login
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>password</li>
+  <li>api_key</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "token":"k5Q26t5X_TA89EQsLkSs",
+  </div>
+  }
+</div>
+
+<hr>
+<h3>Logout</h3>
+<strong>URL : </strong>http://spotnsnap.com/api/v1/logout
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  "message": "Logout successful"
+  }
+</div>
+
+<hr>
+<h3>Switch Online</h3>
+<strong>URL : </strong>http://spotnsnap.com/api/v1/switch-online
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  "message": "Status changed"
+  }
+</div>
+
+<hr>
+<h3>Get current user</h3>
+<strong>URL : </strong>http://spotnsnap.com/api/v1/users/current
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  **USER ENTITY**
+</div>
+
+<hr>
+<h3>Get Current Challenge</h3>
+<strong>URL : </strong>http://spotnsnap.com/api/v1/challenges/get-current
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+    **CHALLENGE ENTITY** (Status code 400 if no current challenge)
+</div>
+
+<hr>
+<h3>Upload profile photo</h3>
+<strong>URL : </strong>http://spotnsnap.com/api/v1/users/upload-video
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>file</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "photo":"path/to/the/photo",
+  </div>
+  }
+</div>
+
+<hr>
+<h3>User List (avec ranking)</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/users
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>page</li>
+  <li>per_page</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  [
+  <div class="indented">
+    **USER ENTITY**,
+    ...
+  </div>
+  ]
+</div>
+
+
+<hr>
+<h3>User Show</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/users
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>id</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  **USER ENTITY**
+</div>
+
+
+<hr>
+<h3>User GCM Registration</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/users/register-gcm
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>registration_id</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "user": **USER ENTITY**,
+    <br>"registration_id":"azerttyuiooop",
+  </div>
+  }
+</div>
+
+
+<hr>
+<h3>User Apple Registration</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/users/register-apple
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>device_token</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "user": **USER ENTITY**,
+    <br>"device_token":"azerttyuiooop",
+  </div>
+  }
+</div>
+
+<hr>
+<h3>New Location</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/locations
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>latitude</li>
+  <li>longitude</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  **LOCATION ENTITY**
+</div>
+
+<hr>
+<h3>Create Challenge (TEST ONLY, WILL BE REMOVED LATER)</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/challenges/create-challenge
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>user_id</li>
+  <li>opponent_id</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  **CHALLENGE ENTITY**
+</div>
+
+<hr>
+<h3>Get Challenge</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/challenges/show
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>challenge_id</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  **CHALLENGE ENTITY**
+</div>
+
+<hr>
+<h3>Cancel Challenge</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/challenges/cancel-challenge
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>challenge</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+    **CHALLENGE ENTITY**
+</div>
+
+<hr>
+<h3>Submit photo for challenge</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/challenges/submit-photo
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>challenge</li>
+  <li>photo</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  **CHATROOM ENTITY**
+</div>
+
+<hr>
+<h3>List Chat Room</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/chat/rooms
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  [
+  <div class="indented">
+    **CHATROOM ENTITY**,
+    ...
+  </div>
+  ]
+</div>
+
+<hr>
+<h3>List Chat Messages</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/chat/messages
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>room_id</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  [
+  <div class="indented">
+    **CHATMESSAGE ENTITY**,
+    ...
+  </div>
+  ]
+</div>
+
+<hr>
+<h3>New Chat Message</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/chat/messages
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>room_id</li>
+  <li>message</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  [
+  <div class="indented">
+    **CHATMESSAGE ENTITY**,
+    ...
+  </div>
+  ]
+</div>
+
+<hr>
+<h3>Get Offer</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/offers/show
+<br>
+<strong>Méthode : </strong>GET
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>offer_id</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  **OFFER ENTITY**
+</div>
+
+<hr>
+<h3>New Chat Message</h3>
+<strong>URL : </strong>http://www.spotnsnap.com/api/v1/chat/messages
+<br>
+<strong>Méthode : </strong>POST
+<br>
+<strong>Paramètres : </strong>
+<ul>
+  <li>email</li>
+  <li>token</li>
+  <li>api_key</li>
+  <li>room_id</li>
+  <li>message</li>
+</ul>
+<br>
+<strong>Réponse : </strong>
+<div class="json_container">
+  [
+  <div class="indented">
+    **CHATMESSAGE ENTITY**,
+    ...
+  </div>
+  ]
+</div>
+
+<hr>
+<h1>API ENTITIES : </h1>
+
+<hr>
+<h3>User</h3>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "id":"1",
+    <br>"username":"hugo",
+    <br>"photo":"/path/to/the/photo"
+    <br>"created_at":"2015-02-04T04:27:37.000Z",
+    <br>"updated_at":"2015-02-06T19:56:21.498Z",
+    <br>"points":15
+    <br>"rank":3
+  </div>
+  }
+</div>
+
+<hr>
+<h3>Location</h3>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "id":"1",
+    <br>"latitude":"1",
+    <br>"longitude":"1",
+    <br>"created_at":"2015-02-11T13:01:57.272Z",
+    <br>"updated_at":"2015-02-11T13:01:57.272Z"
+  </div>
+  }
+</div>
+
+<hr>
+<h3>ChatRoom Entity</h3>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    users: [
+    <div class="indented">
+      **USER ENTITY**,
+      <br>...
+    </div>
+    ],
+    <br>"id":"1",
+    <br>"created_at":"2015-02-11T13:01:57.272Z",
+    <br>"updated_at":"2015-02-11T13:01:57.272Z"
+  </div>
+  }
+</div>
+
+<hr>
+<h3>ChatMessage Entity</h3>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "id":"1",
+    <br>"message": "Bongyour les zamis",
+    <br>"user": **USER ENTITY**,
+    <br>"created_at":"2015-02-11T13:01:57.272Z",
+    <br>"updated_at":"2015-02-11T13:01:57.272Z"
+  </div>
+  }
+</div>
+
+<hr>
+<h3>Challenge Entity</h3>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "id":"1",
+    <br>"active": "1" / "nil" ,
+    <br>"latitude": "1",
+    <br>"longitude": "1",
+    <br>"user1": **USER ENTITY**,
+    <br>"user2": **USER ENTITY**,
+    <br>"created_at":"2015-02-11T13:01:57.272Z",
+    <br>"updated_at":"2015-02-11T13:01:57.272Z"
+  </div>
+  }
+</div>
+
+<hr>
+<h3>Offer Entity</h3>
+<strong>Réponse : </strong>
+<div class="json_container">
+  {
+  <div class="indented">
+    "id":"1",
+    <br>"content":"10% de réduction chez Sephora !"
+    <br>"latitude":"1",
+    <br>"longitude":"1",
+    <br>"created_at":"2015-02-11T13:01:57.272Z",
+    <br>"updated_at":"2015-02-11T13:01:57.272Z"
+  </div>
+  }
+</div>

@@ -1,0 +1,370 @@
+/* 
+   ------------------------------------------------------
+					Responsive Styles
+   ------------------------------------------------------
+*/
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+	/*------------------------------------------*/
+	/*	 Intro Description 
+	/*------------------------------------------*/
+
+	#intro_description h1 {font-size: 46px; line-height: 46px; margin-top: 50px;}
+	#intro_description h2 {font-size: 30px;} 
+	
+	/*------------------------------------------*/
+	/*	  Features Box
+	/*------------------------------------------*/
+
+	.feature-box { margin-top: 35px; }
+	
+	/*------------------------------------------*/
+	/*	  More Feature Box
+	/*------------------------------------------*/
+
+	.more_feature_box { margin-top: 30px; }
+	
+	/*------------------------------------------*/
+	/*	 Content Slider
+	/*------------------------------------------*/
+
+	.content_slider h2 { font-size: 28px; margin-top: 0; margin-bottom: 10px;}	
+	.content_slider img { margin-top: 30px;}
+		
+	/*------------------------------------------*/
+	/*	  Video
+	/*------------------------------------------*/ 
+	
+	#video .titlebar {margin-bottom: 40px;}
+	#video_content {margin-bottom: 60px;}
+	#video_content h2 {text-align: center;padding: 0 8%;}
+	#video_content p { padding: 0 10%;}
+	.stores {text-align: center;}
+	#video_holder {margin-left: 80px; margin-right: 80px;}
+	
+	
+}
+
+
+@media only screen and (max-width: 991px){
+
+	/*------------------------------------------*/
+	/*	 Intro Description 
+	/*------------------------------------------*/
+
+	#intro_description  {margin-bottom: 80px; }
+	#intro_description h1 { font-size: 48px; line-height: 48px; margin-top: 30px; text-align: center; }
+	#intro_description h2 { font-size: 30px; text-align: center; } 
+	#intro_description p { text-align: center; padding: 0 5%; }
+	
+	/*------------------------------------------*/
+	/*	 Intro Store Icons
+	/*------------------------------------------*/
+
+	#intro_stores { margin-top: 30px; text-align: center; }
+	
+	/*------------------------------------------*/
+	/*	  Features
+	/*------------------------------------------*/
+
+	#features .titlebar {margin-bottom: 10px;}
+	#features_left_content, #features_right_content { text-align: center; padding: 0 15%; }
+	.feature-box { margin-top: 30px; }
+	#features_image img { margin-top: 60px; }
+	
+	/*------------------------------------------*/
+	/*	 Call-To-Action 
+	/*------------------------------------------*/  
+
+	#cta_slogan, #cta_button { text-align: center;}
+	#cta_button a { margin-top: 20px; }
+	
+	/*------------------------------------------*/
+	/*	 More Features Description
+	/*------------------------------------------*/
+
+	#more_features_description h2 { text-align: center; margin-top: 0; }
+	#more_features_description p { text-align: center; padding: 0 10%;}
+	#more_features_description .more_feature_box p { text-align: left; padding: 0;}
+	#more_features_description .row {margin-left: 40px; margin-right: 40px;}
+	#more_features img {margin-top: 60px;}
+	
+	/*------------------------------------------*/
+	/*	  Statistic Banner Content
+	/*------------------------------------------*/ 
+
+	.statistic-number {font-size: 55px; line-height: 55px;}
+	.statistic-text {font-size: 16px;}
+	
+	/*------------------------------------------*/
+	/*	 Content Slider
+	/*------------------------------------------*/
+
+	.content_slider { text-align: center; }
+	.content_slider h2 { padding: 0 10%; margin-top: 0; }
+	.content_slider p { padding: 0 10%; }
+	.slide_2 img { margin-top: 30px;}
+	.slide_1 img, .slide_3 img { margin-bottom: 20px;}	
+	
+	/*------------------------------------------*/
+	/*	 Black promo Line
+	/*------------------------------------------*/
+	
+	#black_promo_line h3 { line-height: 32px;}
+	
+	/*------------------------------------------*/
+	/*	  Video
+	/*------------------------------------------*/ 
+	
+	#video .titlebar {margin-bottom: 40px;}
+	#video_content {margin-bottom: 60px;}
+	#video_content h2 {text-align: center; padding: 0 8%;}
+	#video_content p { padding: 0 8%; text-align: center; }
+	.stores {text-align: center;}
+	#video_holder {margin-left: 40px; margin-right: 40px;}
+	
+	/*------------------------------------------*/
+	/*	 Testimonial
+	/*------------------------------------------*/	
+	
+	.testimonials {margin: 60px 0% 50px;}
+	
+	/*------------------------------------------*/
+	/*	  Newsletter Form Input
+	/*------------------------------------------*/
+	
+	#newsletter form input[type="email"] {width: 55%;}
+	#newsletter form input[type="submit"] {width: 25%;}	
+	
+	
+}
+
+
+@media only screen and (max-width: 767px){
+	
+	/*------------------------------------------*/
+	/*	 Logo Image    
+	/*------------------------------------------*/
+
+	.navbar-brand {padding: 17px 30px;}  
+	
+	/*------------------------------------------*/
+	/*	 Navigation Menu    
+	/*------------------------------------------*/
+
+	.navbar { background-color: #222; padding: 0px;  }
+	
+	/*------------------------------------------*/
+	/*	 Responsive Menu
+	/*------------------------------------------*/
+	
+	.navbar-nav { margin: 0 -15px; border-top: 1px solid #444; background-color: #222;}	
+	.navbar-nav > li { text-align: center;}
+	.navbar-nav > li > a { line-height: 45px; text-align: center;}
+
+	/*------------------------------------------*/
+	/*	 More Features Description
+	/*------------------------------------------*/
+
+	#more_features_description p { padding: 0 4%;}
+	
+	/*------------------------------------------*/
+	/*	  Statistic Banner Content
+	/*------------------------------------------*/ 
+
+	.statistic-number {font-size: 40px; line-height: 40px;}
+	.statistic-text {font-size: 14px;}
+	
+	/*------------------------------------------*/
+	/*	 Content Slider
+	/*------------------------------------------*/
+
+	.content_slider h2 { padding: 0 4%; margin-top: 0; }
+	.content_slider p { padding: 0 4%; }
+	
+	/*------------------------------------------*/
+	/*	  Video
+	/*------------------------------------------*/ 
+	
+	#video_content h2 { padding: 0 4%;}
+	#video_content p { padding: 0 4%;  }
+	#video_holder {margin-left: 20px; margin-right: 20px;}
+	
+	/*------------------------------------------*/
+	/*	 Testimonial
+	/*------------------------------------------*/
+
+	.testimonials p {font-size: 16px;line-height: 26px;}
+	
+	/*------------------------------------------*/
+	/*	 FAQs
+	/*------------------------------------------*/
+	
+	#faq { padding-left: 30px; padding-right: 30px; }
+	
+	
+}
+
+
+@media (max-width: 480px) {
+
+	#stlChanger { display: none;}
+	
+	/*------------------------------------------*/
+	/*	 Section Titlebar
+	/*------------------------------------------*/
+
+	.titlebar h2 { font-size: 34px; line-height: 34px; }
+	.titlebar p { padding: 0 2%; }
+	
+	/*------------------------------------------*/
+	/*	 Intro Description 
+	/*------------------------------------------*/
+
+	#intro_description  {margin-bottom: 80px; }
+	#intro_description h1 { font-size: 38px; line-height: 38px; }
+	#intro_description h2 { font-size: 24px; } 
+	#intro_description p { font-size: 16px; line-height: 22px; padding: 0; }
+	#intro_stores a img { margin-bottom: 10px;}
+	
+	/*------------------------------------------*/
+	/*	  Features
+	/*------------------------------------------*/
+
+	#features_left_content, #features_right_content { text-align: center; padding: 0 7%; }
+
+	/*------------------------------------------*/
+	/*	 Call-To-Action Slogan
+	/*------------------------------------------*/  
+
+	#cta_slogan h2 {font-size: 24px; line-height: 32px;}
+	#cta_slogan p {	font-size: 14px;line-height: 22px; padding: 0 12%;}
+	
+	/*------------------------------------------*/
+	/*	 More Features Description
+	/*------------------------------------------*/
+
+	#more_features_description h2 {font-size: 24px; line-height: 32px;}
+	#more_features_description p { padding: 0;}
+	.more_feature_box {width: 100%; float: none; margin: 40px 30px 0;}
+	
+	/*------------------------------------------*/
+	/*	  Statistic Banner
+	/*------------------------------------------*/ 
+
+	#statistic_banner {padding-top: 30px; }
+	.statistic-block {width: 100%; float: none; margin-top: 30px;}
+	.statistic-number {margin-bottom: 10px;}
+	
+	/*------------------------------------------*/
+	/*	 Content Slider
+	/*------------------------------------------*/
+
+	.content_slider h2 {font-size: 24px; line-height: 32px; padding: 0;}
+	.content_slider p { padding: 0; }
+	
+	/*------------------------------------------*/
+	/*	 Promo Banner 
+	/*------------------------------------------*/
+	
+	#promo_banner h2 {font-size: 30px; line-height: 30px;}
+	#promo_banner h3 {font-size: 17px;}
+	
+	/*------------------------------------------*/
+	/*	 Black Promo Line
+	/*------------------------------------------*/
+	
+	#black_promo_line h3 {font-size: 20px; line-height: 30px;}
+	
+	/*------------------------------------------*/
+	/*	  Video
+	/*------------------------------------------*/ 
+	
+	#video_content h2 {font-size: 24px; line-height: 32px; padding: 0;}
+	#video_content p { padding: 0;  }
+	#video_holder {margin-left: 10px; margin-right: 10px;}
+	.stores a img { margin-bottom: 10px;}
+		
+	/*------------------------------------------*/
+	/*	 FAQs
+	/*------------------------------------------*/
+	
+	#faq { padding-left: 5px; padding-right: 5px; }
+	
+	/*------------------------------------------*/
+	/*	  Newsletter
+	/*------------------------------------------*/
+	
+	#newsletter h1 {font-size: 28px; }
+	#newsletter p {font-size: 16px; padding: 0 5%;}
+	
+	/*------------------------------------------*/
+	/*	  Newsletter Form Input
+	/*------------------------------------------*/
+	
+	#newsletter form input[type="email"] {width: 60%; font-size: 16px;}
+	#newsletter form input[type="submit"] {width: 30%; font-size: 16px; margin-left: 5px;}	
+	.message {font-size: 14px;}
+	
+	
+}
+
+
+@media (max-width: 320px) {
+
+	/*------------------------------------------*/
+	/*	 Section Titlebar
+	/*------------------------------------------*/
+
+	.titlebar h2 { font-size: 30px; line-height: 34px; }
+	.titlebar p { font-size: 14px; line-height: 20px; padding: 0 5%; }
+	
+	/*------------------------------------------*/
+	/*	 Intro Basic Settings
+	/*------------------------------------------*/
+
+	#intro {padding-top: 100px;}
+	
+	/*------------------------------------------*/
+	/*	 Intro Description 
+	/*------------------------------------------*/
+
+	#intro_description  {margin-bottom: 40px; }
+	#intro_description h1 { font-size: 25px; line-height: 25px; }
+	#intro_description h2 { font-size: 16px; } 
+	#intro_description p { font-size: 13px; line-height: 18px; padding: 0; }
+	
+	/*------------------------------------------*/
+	/*	  Features
+	/*------------------------------------------*/
+
+	#features_left_content, #features_right_content { text-align: center; padding: 0 2%; }
+	
+	/*------------------------------------------*/
+	/*	 More Features Description
+	/*------------------------------------------*/
+
+	#more_features_description p { padding: 0;}
+	#more_features_description .row {margin-left: 5px; margin-right: 5px;}
+	.more_feature_box {margin: 40px 0 0;}
+	
+	/*------------------------------------------*/
+	/*	 Promo Banner 
+	/*------------------------------------------*/
+	
+	#promo_banner { padding-top: 30px; }
+	
+	/*------------------------------------------*/
+	/*	  Newsletter Form Input
+	/*------------------------------------------*/
+	
+	#newsletter form input[type="email"] {width: 55%; font-size: 14px;}
+	#newsletter form input[type="submit"] {width: 40%; font-size: 14px; margin-left: 2px;}	
+	.message {font-size: 16px;}
+
+	
+}
+
+

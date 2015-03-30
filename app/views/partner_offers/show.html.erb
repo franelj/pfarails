@@ -1,0 +1,19 @@
+<% provide(:page_title, "Voir une offre") %>
+<strong>Latitude : </strong>
+<%= @offer.latitude %>
+<hr>
+<strong>Longitude : </strong>
+<%= @offer.longitude %>
+<hr>
+<strong>Contenu : </strong><br>
+<%= @offer.content %>
+<hr>
+<br><br>
+
+<ul>
+  <li><%= link_to "Retour à la liste", partner_offers_path %></li>
+  <li><%= link_to "Editer", edit_partner_offer_path(@offer) %></li>
+  <li><%= link_to 'Supprimer', partner_offer_path(@offer),
+                  data: { confirm: 'Confirmez vous la suppression ?' }, :method => :delete %></li>
+</ul>
+

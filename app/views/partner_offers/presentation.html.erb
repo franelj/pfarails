@@ -1,0 +1,47 @@
+<p>Si vous êtes une entreprise, nous pouvons travailler ensemble pour vous permettre de placer des offres géolocalisées.<br>
+  Vous n'avez qu'à spécifier une location et un message, et nos utilisateur seront notifiés de votre offre lorsqu'ils passeront à proximité.<br>
+  Contactez nous afin d'obtenir un compte partenaire et créer vos propres offres !<br>
+  Si vous avez déjà un compte partenaire, <%= link_to "connectez vous", new_user_session_path %> dès à présent à votre espace.
+</p>
+
+<br>
+
+<% unless @errors.nil? || @errors.empty? %>
+    <div align="center">
+      <ul>
+        <% @errors.each do |msg| %>
+            <li><strong><%= msg %></strong></li>
+        <% end %>
+      </ul>
+    </div>
+    <br>
+<% end %>
+
+<%= form_tag contact_path, class:"form-horizontal" do %>
+    <div class="form-group">
+      <%= label_tag(:from_company, "Votre compagnie", class:"col-sm-2 control-label") %>
+      <div class="col-sm-10">
+        <%= text_field_tag :from_company, nil, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:from_email, "Votre email", class:"col-sm-2 control-label") %>
+      <div class="col-sm-10">
+        <%= email_field_tag :from_email, nil, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:content, "Une description de votre compagnie et de vos futures offres", class:"col-sm-2 control-label") %>
+      <div class="col-sm-10">
+        <%= text_area_tag :content, nil, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= submit_tag("Envoyer", class: "btn btn-default") %>
+      </div>
+    </div>
+
+<% end %>
+
+

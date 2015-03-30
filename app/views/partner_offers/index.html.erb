@@ -1,0 +1,41 @@
+<% provide(:page_title, "Liste de vos offres") %>
+
+<%= link_to new_partner_offer_path do %>
+  <%= button_tag "Créer une offre", class: "btn btn-primary" %>
+<% end %>
+<br><br>
+<% if @offers.empty? %>
+    Vous n'avez pas d'offres actuellement.
+<% else %>
+    <table class="table table-striped">
+      <thead>
+      <th>Date de création</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Contenu</th>
+      <th>Actions</th>
+      </thead>
+
+      <tbody>
+      <% @offers.each do |offer| %>
+          <tr>
+            <td><%= offer.created_at.strftime("%d/%m/%Y") %></td>
+            <td><%= offer.latitude %></td>
+            <td><%= offer.longitude %></td>
+            <td><%= offer.content %></td>
+            <td>
+              <%= link_to "Voir", partner_offer_path(offer) %>
+              |
+              <%= link_to "Editer", edit_partner_offer_path(offer) %>
+              |
+              <%= link_to 'Supprimer', partner_offer_path(offer),
+                          data: { confirm: 'Confirmez vous la suppression ?' }, :method => :delete %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% end %>
+
+<hr>
+<%= link_to('Se déconnecter', destroy_user_session_path, :method => :delete) %>
